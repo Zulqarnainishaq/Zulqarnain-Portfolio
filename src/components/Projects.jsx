@@ -29,23 +29,22 @@ const Projects = () => {
             </ul>
           </div>
           <div className="flex flex-col items-center text-white text-xl font-bold">
-            <p className='mb-1 xl:text-5xl lg:text-3xl md:text-2xl sm:text-[1.75rem] xs:text-[1.5rem] text-center'>Additional Information</p>
-            <p className='mb-1 text-[1.25rem] lg:text-[1.5rem] md:text-[1.25rem] sm:text-[1rem] xs:text-[0.75rem] text-center'>Details</p>
+            <p className='mb-1 xl:text-5xl lg:text-3xl md:text-2xl sm:text-[1.75rem] xs:text-[1.5rem] text-center'>Search Engine For Past Papers of FAST NUCESn</p>
+            <p className='mb-1 text-[1.25rem] lg:text-[1.5rem] md:text-[1.25rem] sm:text-[1rem] xs:text-[0.75rem] text-center'>Technologies Used</p>
             <ul className='list-none list-inside my-0 text-center'>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- More details about the project</li>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Technologies used</li>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Project outcomes</li>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Other relevant information</li>
+              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Python</li>
+              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- huggingface</li>
+              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Information Retrival methods</li>
             </ul>
           </div>
           <div className="flex flex-col items-center text-white text-xl font-bold">
-            <p className='mb-1 xl:text-5xl lg:text-3xl md:text-2xl sm:text-[1.75rem] xs:text-[1.5rem] text-center'>Third Section</p>
-            <p className='mb-1 text-[1.25rem] lg:text-[1.5rem] md:text-[1.25rem] sm:text-[1rem] xs:text-[0.75rem] text-center'>More Details</p>
+            <p className='mb-1 xl:text-5xl lg:text-3xl md:text-2xl sm:text-[1.75rem] xs:text-[1.5rem] text-center'>E-Pharmacy (Online store to buy medicines)</p>
+            <p className='mb-1 text-[1.25rem] lg:text-[1.5rem] md:text-[1.25rem] sm:text-[1rem] xs:text-[0.75rem] text-center'>Technologies Used</p>
             <ul className='list-none list-inside my-0 text-center'>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Item 1</li>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Item 2</li>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Item 3</li>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Item 4</li>
+              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Node.js</li>
+              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- React.js</li>
+              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Bootstrap</li>
+              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- MySQL</li>
             </ul>
           </div>
         </div>
