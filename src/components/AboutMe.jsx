@@ -1,4 +1,3 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComputer, faGamepad, faFutbol } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
@@ -16,10 +15,10 @@ const AboutMe = () => {
         <div className='group flex flex-col justify-center w-full lg:w-[50vw] xs:w-[60vw] max-h-[20rem] m-10 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 p-3 transition-transform duration-300'>
           <div className='flex flex-col items-center '>
             <FontAwesomeIcon className='h-[6.75rem] lg:h-[6rem] md:h-[6.5rem] sm:h-[3.5rem] xs:h-[4.5rem] w-auto' icon={faComputer} />
-            <p className='text-center text-2xl md:text-xl font-bold mb-3'>Software engineer</p>
+            <p className='text-center text-2xl md:text-xl font-bold mb-3'>Senior Software Engineer</p>
           </div>
           <p className='text-justify text-[1rem] opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 transition-all duration-300'>
-            Currently working as a software Engineer at Statergic System Internationals, having a two year's worth of hands-on with JavaScript intensive web applications.
+            Currently working as a Senior Software Engineer at Strategic Systems International, specializing in generative AI solutions with over 3 years of experience in full-stack development using modern JavaScript frameworks and cloud technologies.
           </p>
         </div>
         

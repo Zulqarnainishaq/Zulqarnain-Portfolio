@@ -1,0 +1,134 @@
+[
+  {
+    "id": "news-summarizer",
+    "slug": "news-text-summarization",
+    "title": "News Text Summarization using Deep Learning",
+    "shortDescription": "Summarizes news articles with Keras/TensorFlow trained on the CNN/DailyMail dataset.",
+    "image": "news summarizer.jpg",
+    "technologies": ["Django", "React", "Keras", "TensorFlow", "CNN/DailyMail"],
+    "links": {
+      "demo": "https://drive.google.com/file/d/15fLsYFYgZE5QyAhFAdJn_PqtH4GyOhaq/view?usp=sharing/",
+      "repo": ""
+    },
+    "details": {
+      "overview": "A full‑stack application that allows users to paste a news article and generate an abstractive summary using a Seq2Seq model trained with Keras/TensorFlow. The backend is built in Django with an inference API, and the frontend is in React.",
+      "features": [
+        "Paste article or upload file to summarize",
+        "GPU-accelerated model inference endpoint",
+        "History of generated summaries"
+      ]
+    }
+  },
+  {
+    "id": "past-papers-search",
+    "slug": "past-papers-search",
+    "title": "Search Engine for Past Papers (FAST NUCES)",
+    "shortDescription": "Academic search over past papers using information retrieval techniques and embeddings.",
+    "image": "past papers search engine.jpg",
+    "technologies": ["Python", "Hugging Face", "IR Methods"],
+    "links": {
+      "demo": "",
+      "repo": ""
+    },
+    "details": {
+      "features": [
+        "Tokenization, stemming and TF‑IDF scoring",
+        "Semantic reranking with transformer embeddings",
+        "Faceted filtering by subject and year"
+      ]
+    }
+  },
+  {
+    "id": "e-pharmacy",
+    "slug": "e-pharmacy",
+    "title": "E‑Pharmacy (Online medicine store)",
+    "shortDescription": "E‑commerce app to browse, search and purchase medicines with cart and checkout.",
+    "image": "epharmacy.png",
+    "technologies": ["Node.js", "React", "Bootstrap", "MySQL"],
+    "links": {
+      "demo": "",
+      "repo": ""
+    },
+    "details": {
+      "overview": "A MERN‑style application (Node + React + MySQL) for discovering medicines, placing orders, and managing inventory.",
+      "features": [
+        "JWT authentication and user roles",
+        "Shopping cart and order management",
+        "Admin dashboard for products"
+      ]
+    }
+  },
+  {
+    "id": "timeleft",
+    "slug": "timeleft",
+    "title": "TimeLeft – Countdown & Reminder Utility",
+    "shortDescription": "Versatile desktop utility — countdown clock, reminder, clock, alarm clock, tray clock, stopwatch, timer, sticker, auction watch and time synchronization. Also available as a mobile app.",
+    "image": "timeleft.jpg",
+    "technologies": ["Windows", "Desktop Utility", "Mobile"],
+    "links": {
+      "demo": "https://timeleft.info/",
+      "repo": ""
+    },
+    "details": {
+      "overview": "A feature‑rich time management utility for Windows that provides countdowns, reminders, clocks, timers, stopwatch, sticky notes, tray clock and time synchronization, with customizable floating windows and skins. Also available as a mobile app for time visualization on the go.",
+      "features": [
+        "Powerful customizable reminders with one‑time and recurring schedules",
+        "Countdown for web export and desktop floating countdowns",
+        "Time synchronization using atomic clock servers",
+        "Tray clock with skins and multi‑time‑zone clock",
+        "Stopwatch and timer modules",
+        "Stickers (sticky notes) on desktop",
+        "Working days/hours countdown",
+        "Floating windows with zoom and skins",
+        "Auction Watch to monitor online auctions"
+      ]
+    }
+  },
+  {
+    "id": "stickball",
+    "slug": "stickball",
+    "title": "Stickball – Life Skills & Financial Education",
+    "shortDescription": "Programs for K‑12, college, communities and corporations focused on financial literacy, life skills and analytical certifications; also full‑stack development services.",
+    "image": "stickball.jpg",
+    "technologies": ["EdTech", "Training Programs", "Full‑Stack Services"],
+    "links": {
+      "demo": "https://stickball.biz/",
+      "repo": ""
+    },
+    "details": {
+      "overview": "An education and empowerment platform delivering engaging life skills, financial literacy and analytical certification programs for K‑12, college students, communities and corporates, with tech‑driven, customizable offerings and in‑house full‑stack development services.",
+      "features": [
+        "K‑12 programs emphasizing creativity, critical thinking, communication and collaboration",
+        "College programs in financial literacy, leadership development and emotional intelligence",
+        "Community empowerment initiatives and partnerships",
+        "Corporate training with tailored solutions",
+        "Full‑stack development services for digital products"
+      ]
+    }
+  },
+  {
+    "id": "hummingbird",
+    "slug": "hummingbird",
+    "title": "Hummingbird – Self‑Storage Property Management Software",
+    "shortDescription": "Cloud‑based PMS that automates busywork, streamlines front‑desk workflows, and drives revenue for self‑storage operators.",
+    "image": "hummingbird.webp",
+    "technologies": ["SaaS", "Property Management", "Self Storage"],
+    "links": {
+      "demo": "https://www.tenantinc.com/products/hummingbird",
+      "repo": ""
+    },
+    "details": {
+      "overview": "Modern, cloud‑native property management software for self‑storage operators that automates repetitive tasks (reminders, notices, reporting), empowers front‑desk teams with an intuitive UI, unifies operational and marketing data to reveal what drives occupancy, and bakes compliance into core workflows.",
+      "features": [
+        "Automation for reminders, notices, and reporting",
+        "Intuitive operator‑designed UI for front‑desk efficiency",
+        "Unified data across website, PMS, and reputation analytics",
+        "Built‑in compliance for leases and lien processes"
+      ],
+      "references": [
+        "https://www.tenantinc.com/products/hummingbird",
+        "https://www.tenantinc.com/blog/revolutionizing-self-storage-the-hummingbird-effect"
+      ]
+    }
+  }
+]
