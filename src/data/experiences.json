@@ -1,0 +1,48 @@
+[
+  {
+    "company": "Strategic Systems International",
+    "location": "Lahore",
+    "positions": [
+      {
+        "role": "Senior Software Engineer",
+        "start": "2025-08",
+        "end": null,
+        "location": "Lahore",
+        "summary": "Working on generative AI based solution which provides mobile and web interfaces for better user experience.",
+        "skills": ["React Native", "React", "Node.js", "Vitest", "Postman API", "Postman", "Large Language Models (LLM)", "PostgreSQL", "Amazon Web Services (AWS)", "Amazon Cognito", "Azure DevOps Server", "Git", "Generative AI", "Prompt Engineering"]
+      },
+      {
+        "role": "Software Engineer",
+        "start": "2023-07",
+        "end": "2025-07",
+        "location": "Lahore",
+        "summary": "Built frontend and backend APIs for a microservices-based self-storage platform using Node.js, Vue.js and MySQL. Worked with AWS RDS/S3, Docker, Kubernetes, and Agile processes.",
+        "skills": [
+          "Node.js", "Vue.js", "MySQL", "Software Development", "JavaScript Frameworks", "AWS/RDS", "Jira", "Git/GitLab", "Postman", "AWS/S3", "Docker", "Kubernetes"
+        ]
+      }
+    ],
+    "skills": [
+      "React Native", "React", "Node.js", "Vitest", "Postman API", "Postman", "Large Language Models (LLM)", "PostgreSQL", "Amazon Web Services (AWS)", "Amazon Cognito", "Azure DevOps Server", "Git", "Generative AI", "Prompt Engineering",
+      "Vue.js", "MySQL", "AWS/RDS", "Docker", "Kubernetes", "S3", "Jira", "GitLab"
+    ]
+  },
+  {
+    "company": "FastDevLabs",
+    "role": "Associate Software Engineer",
+    "period": "Sep 2022 - Jun 2023",
+    "summary": "Developed features and APIs using Node.js, React.js, and MySQL. Performed unit and stress testing.",
+    "skills": [
+      "JavaScript","JavaScript Frameworks","React.js","Node.js","MySQL","Jira","Postman","Git"
+    ]
+  },
+  {
+    "company": "United Softlabs",
+    "role": "Software Engineer Intern",
+    "period": "Jun 2022 - Aug 2022",
+    "summary": "Worked on full‑stack features using Node.js, React.js and MySQL. Trained and deployed a deep learning model for an e‑commerce use case.",
+    "skills": [
+      "HTML","CSS","JavaScript","React.js","Keras/TensorFlow","SQLite","MongoDB","Node.js","Git"
+    ]
+  }
+]

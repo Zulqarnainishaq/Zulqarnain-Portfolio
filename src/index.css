@@ -4,3 +4,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Prevent image drag/save in protected areas */
+.select-none {
+  -webkit-user-drag: none;
+  user-select: none;
+}

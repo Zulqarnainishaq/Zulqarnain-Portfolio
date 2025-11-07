@@ -1,6 +1,28 @@
-import React from 'react';
-import back from '../assets/back.jpg';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import projects from '../data/projects.json';
+import back from '../assets/back.jpg';
+import pc from '../assets/pc.jpg';
+import pcc from '../assets/pcc.jpg';
+import newsSummarizer from '../assets/news summarizer.jpg';
+import pastPapers from '../assets/past papers search engine.jpg';
+import epharmacy from '../assets/epharmacy.png';
+import timeleft from '../assets/timeleft.jpg';
+import stickball from '../assets/stickball.jpg';
+import hummingbird from '../assets/hummingbird.webp';
+
+// Map image names from JSON to actual imports
+const imageMap = {
+  'back.jpg': back,
+  'pc.jpg': pc,
+  'pcc.jpg': pcc,
+  'news summarizer.jpg': newsSummarizer,
+  'past papers search engine.jpg': pastPapers,
+  'epharmacy.png': epharmacy,
+  'timeleft.jpg': timeleft,
+  'stickball.jpg': stickball,
+  'hummingbird.webp': hummingbird,
+};
 
 const Projects = () => {
   return (
@@ -10,45 +32,22 @@ const Projects = () => {
       whileInView={{ opacity: 1 }} 
       className="mt-40 mb-10 flex flex-col items-center"
     >
-      <h1 className='text-4xl mb-5 font-bold text-center'>Projects Catalogue</h1>
-      <a 
-        href='https://drive.google.com/file/d/15fLsYFYgZE5QyAhFAdJn_PqtH4GyOhaq/view?usp=sharing/'  
-        target="_blank" 
-        className="relative block group w-full sm:w-auto"
-      >
-        <img src={back} alt="Retro Project" className="w-full min-h-screen object-cover" />
-        <div className="absolute inset-0 flex flex-col justify-around p-4 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 space-y-4">
-          <div className="flex flex-col items-center text-white text-xl font-bold">
-            <p className='mb-1 xl:text-5xl lg:text-3xl md:text-2xl sm:text-[1.75rem] xs:text-[1.5rem] text-center'>News Text Summarization using deep learning</p>
-            <p className='mb-1 text-[1.25rem] lg:text-[1.5rem] md:text-[1.25rem] sm:text-[1rem] xs:text-[0.75rem] text-center'>Technologies Used</p>
-            <ul className='list-none list-inside my-0 text-center'>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Django-python</li>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- React.js</li>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- keras-tanserflow</li>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- CNN daily News Dataset</li>
-            </ul>
-          </div>
-          <div className="flex flex-col items-center text-white text-xl font-bold">
-            <p className='mb-1 xl:text-5xl lg:text-3xl md:text-2xl sm:text-[1.75rem] xs:text-[1.5rem] text-center'>Search Engine For Past Papers of FAST NUCESn</p>
-            <p className='mb-1 text-[1.25rem] lg:text-[1.5rem] md:text-[1.25rem] sm:text-[1rem] xs:text-[0.75rem] text-center'>Technologies Used</p>
-            <ul className='list-none list-inside my-0 text-center'>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Python</li>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- huggingface</li>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Information Retrival methods</li>
-            </ul>
-          </div>
-          <div className="flex flex-col items-center text-white text-xl font-bold">
-            <p className='mb-1 xl:text-5xl lg:text-3xl md:text-2xl sm:text-[1.75rem] xs:text-[1.5rem] text-center'>E-Pharmacy (Online store to buy medicines)</p>
-            <p className='mb-1 text-[1.25rem] lg:text-[1.5rem] md:text-[1.25rem] sm:text-[1rem] xs:text-[0.75rem] text-center'>Technologies Used</p>
-            <ul className='list-none list-inside my-0 text-center'>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Node.js</li>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- React.js</li>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- Bootstrap</li>
-              <li className='lg:text-lg md:text-md sm:text-[0.75rem] xs:text-[0.70rem]'>- MySQL</li>
-            </ul>
-          </div>
-        </div>
-      </a>
+      <h1 className='text-4xl mb-10 font-bold text-center'>Projects Catalogue</h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
+        {projects.map((p) => (
+          <Link key={p.id} to={`/projects/${p.id}`} className="relative group rounded-xl overflow-hidden shadow-lg bg-gray-900/20">
+            <img src={imageMap[p.image]} alt={p.title} className="w-full h-60 object-cover" />
+            <div className="p-5">
+              <h3 className="text-2xl font-semibold mb-2">{p.title}</h3>
+              <p className="text-sm opacity-80">{p.shortDescription}</p>
+            </div>
+            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <span className="text-white font-semibold">View details</span>
+            </div>
+          </Link>
+        ))}
+      </div>
     </motion.div>
   );
 }

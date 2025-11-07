@@ -1,6 +1,5 @@
-import React from 'react';
-import hero1 from "../assets/Hero1.jpg";
 import main from '../assets/main.jpg';
+import cvPdf from './Zulqarnain_CV.pdf';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -11,13 +10,26 @@ const Hero = () => {
           <motion.div initial={{opacity:0, x: -100}} whileInView={{opacity:1, x:0}} transition={{type:"spring", stiffness:10, duration: 1}}
             className='text-justify flex justify-center flex-col '>
             <h1 className='lg:text-5xl md:text-[5rem] sm:text-[5rem] xs:text-4xl text-left font-extrabold mb-5'>Zulqarnain Ishaq</h1>
-            <h1 className='lg:text-3xl md:text-[3rem] sm:text-xl xs:text-2xl font-extrabold '>Software <span className=''>Engineer</span></h1>
-            <p className='lg:text-xl sm:text-2xl xs:text-xl mt-5'>A software engineer trying to upskill everyday!</p>
-            <p className='lg:text-lg sm:text-xl xs:text-md mt-2 italic'>BSCS graduated from FAST NUCES Lahore (CGPA ~ 3.53). Have nearly two years of experience in JavaScript frameworks web development along with hands on experience with python.</p>
+            <h1 className='lg:text-3xl md:text-[3rem] sm:text-xl xs:text-2xl font-extrabold '>Senior Software <span className=''>Engineer</span></h1>
+            <p className='lg:text-xl sm:text-2xl xs:text-xl mt-5'>A senior software engineer specializing in full-stack development and generative AI!</p>
+            <p className='lg:text-lg sm:text-xl xs:text-md mt-2 italic'>BSCS graduated from FAST NUCES Lahore (CGPA ~ 3.53). Currently working as Senior Software Engineer at Strategic Systems International with over 3 years of experience in modern JavaScript frameworks, generative AI solutions, and cloud technologies.</p>
           </motion.div>
-          <motion.div initial={{opacity:0, y: 100}} whileInView={{opacity:1, y:0}} transition={{type:"spring", stiffness:10, duration: 1.5}} className='w-full mt-5 h-auto flex flex-row items-center justify-start '>
-            <p className='mr-3'>Want to have a quick chat?</p>
-           <a href="mailto:zulqarnainishaq300@gmail.com" target="_top"><button className='block lg:w-[10rem] md:w-[15rem] sm:w-[12.5rem] xs:w-[10rem] h-auto bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition ' type='button'>Contact me!</button></a>
+          <motion.div initial={{opacity:0, y: 100}} whileInView={{opacity:1, y:0}} transition={{type:"spring", stiffness:10, duration: 1.5}} className='w-full mt-5 h-auto flex flex-col gap-3'>
+            <div className='flex flex-row items-center justify-start'>
+              <p className='mr-3'>Want to have a quick chat?</p>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=zulqarnainishaq300@gmail.com&su=Hello%20Zulqarnain&body=Hi%20there%2C"
+                target="_blank"
+                rel="noopener noreferrer"
+                className='block lg:w-[10rem] md:w-[15rem] sm:w-[12.5rem] xs:w-[10rem] h-auto bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-3 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition'
+              >
+                Contact me!
+              </a>
+            </div>
+            <div className='flex flex-row items-center justify-start'>
+              <p className='mr-3'>Download my latest CV:</p>
+              <a href={cvPdf} download="Zulqarnain_CV.pdf" target="_blank" rel="noopener noreferrer"><button className='block lg:w-[10rem] md:w-[15rem] sm:w-[12.5rem] xs:w-[10rem] h-auto bg-blue-500 dark:bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700 transition ' type='button'>Download CV</button></a>
+            </div>
           </motion.div>
         </div>
         <motion.div initial={{opacity:0, x: 100}} whileInView={{opacity:1, x:0}} transition={{type:"spring", stiffness:10, duration: 1}} className='my-10 lg:w-[45%] rounded-2xl sm:w-[100%]'>
