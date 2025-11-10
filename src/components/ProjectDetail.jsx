@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import projects from '../data/projects.json';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
@@ -8,6 +9,11 @@ import epharmacy from '../assets/epharmacy.png';
 import timeleft from '../assets/timeleft.jpg';
 import stickball from '../assets/stickball.jpg';
 import hummingbird from '../assets/hummingbird.webp';
+import selvaHome1 from '../assets/Selva — Home Screen (1).png';
+import selvaHome2 from '../assets/Selva — Home Screen (2).png';
+import selvaTripDetail1 from '../assets/Selva Trip Detail.jpg';
+import selvaTripDetail2 from '../assets/Selva Trip Detail (2).jpg';
+import selvaTripDetail3 from '../assets/Selva Trip Detail (3).jpg';
 
 // Map image names from JSON to actual imports
 const imageMap = {
@@ -17,6 +23,11 @@ const imageMap = {
   'timeleft.jpg': timeleft,
   'stickball.jpg': stickball,
   'hummingbird.webp': hummingbird,
+  'Selva — Home Screen (1).png': selvaHome1,
+  'Selva — Home Screen (2).png': selvaHome2,
+  'Selva Trip Detail.jpg': selvaTripDetail1,
+  'Selva Trip Detail (2).jpg': selvaTripDetail2,
+  'Selva Trip Detail (3).jpg': selvaTripDetail3,
 };
 
 const Tag = ({ children }) => {
@@ -34,6 +45,24 @@ Tag.propTypes = {
 const ProjectDetail = () => {
   const { id } = useParams();
   const project = projects.find(p => p.id === id);
+  const [selvaIndex, setSelvaIndex] = useState(0);
+
+  const selvaImages = Array.isArray(project?.images) ? project.images : [];
+
+  const prevSelva = () => {
+    if (selvaImages.length === 0) return;
+    setSelvaIndex((i) => (i - 1 + selvaImages.length) % selvaImages.length);
+  };
+
+  const nextSelva = () => {
+    if (selvaImages.length === 0) return;
+    setSelvaIndex((i) => (i + 1) % selvaImages.length);
+  };
+
+  // Ensure view starts at the top when opening a project detail
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   if (!project) {
     return (
@@ -59,14 +88,69 @@ const ProjectDetail = () => {
           ← Back to Projects
         </Link>
 
-        {/* Project image */}
-        <div className="mb-8">
-          <img 
-            src={imageMap[project.image]} 
-            alt={project.title}
-            className="w-full h-auto rounded-xl shadow-lg"
-          />
-        </div>
+        {/* Project images (gallery) */}
+        {Array.isArray(project.images) && project.images.length > 0 ? (
+          project.id === 'selva' ? (
+            // Arrow slider for Selva mobile images
+            <div className="mb-8 relative flex items-center justify-center">
+              <button
+                type="button"
+                aria-label="Previous image"
+                onClick={prevSelva}
+                className="absolute left-0 md:left-6 top-1/2 -translate-y-1/2 bg-white/70 dark:bg-gray-800/70 text-gray-900 dark:text-gray-100 hover:bg-white dark:hover:bg-gray-800 rounded-full p-2 shadow-md"
+              >
+                ←
+              </button>
+
+              <div className="shrink-0 bg-black rounded-3xl p-2 border border-gray-700 w-[180px] md:w-[200px]">
+                <img
+                  src={imageMap[selvaImages[selvaIndex]]}
+                  alt={`${project.title} mobile ${selvaIndex + 1}`}
+                  className="rounded-2xl w-full h-auto"
+                />
+              </div>
+
+              <button
+                type="button"
+                aria-label="Next image"
+                onClick={nextSelva}
+                className="absolute right-0 md:right-6 top-1/2 -translate-y-1/2 bg-white/70 dark:bg-gray-800/70 text-gray-900 dark:text-gray-100 hover:bg-white dark:hover:bg-gray-800 rounded-full p-2 shadow-md"
+              >
+                →
+              </button>
+
+              <div className="absolute -bottom-6 flex gap-2">
+                {selvaImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    aria-label={`Go to image ${idx + 1}`}
+                    onClick={() => setSelvaIndex(idx)}
+                    className={`h-2.5 w-2.5 rounded-full ${idx === selvaIndex ? 'bg-blue-500' : 'bg-gray-400'} hover:bg-blue-400`}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {project.images.map((imgName, idx) => (
+                <img
+                  key={idx}
+                  src={imageMap[imgName]}
+                  alt={`${project.title} ${idx + 1}`}
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
+              ))}
+            </div>
+          )
+        ) : (
+          <div className="mb-8">
+            <img 
+              src={imageMap[project.image]} 
+              alt={project.title}
+              className={`w-full h-auto rounded-xl shadow-lg ${project.id === 'selva' ? 'max-w-sm mx-auto' : ''}`}
+            />
+          </div>
+        )}
 
         {/* Project title and description */}
         <motion.div 
@@ -96,9 +180,24 @@ const ProjectDetail = () => {
           className="mb-8"
         >
           <h2 className="text-2xl font-bold mb-4">Overview</h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-            {project.details.overview}
-          </p>
+          {project.id === 'selva' ? (
+            <div className="grid md:grid-cols-2 gap-6 items-start">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                {project.details.overview}
+              </p>
+              <div className="flex justify-center md:justify-start">
+                <img
+                  src={imageMap[(project.images && project.images[0]) || project.image]}
+                  alt={`${project.title} mobile`}
+                  className="rounded-xl shadow-lg max-w-[220px]"
+                />
+              </div>
+            </div>
+          ) : (
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+              {project.details.overview}
+            </p>
+          )}
 
           {project.details.features && (
             <>
