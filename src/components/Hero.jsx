@@ -12,7 +12,7 @@ const Hero = () => {
             <h1 className='lg:text-5xl md:text-[5rem] sm:text-[5rem] xs:text-4xl text-left font-extrabold mb-5'>Zulqarnain Ishaq</h1>
             <h1 className='lg:text-3xl md:text-[3rem] sm:text-xl xs:text-2xl font-extrabold '>Senior Software <span className=''>Engineer</span></h1>
             <p className='lg:text-xl sm:text-2xl xs:text-xl mt-5'>A senior software engineer specializing in full-stack development and generative AI!</p>
-            <p className='lg:text-lg sm:text-xl xs:text-md mt-2 italic'>BSCS graduated from FAST NUCES Lahore (CGPA ~ 3.53). Currently working as Senior Software Engineer at Strategic Systems International with over 3 years of experience in modern JavaScript frameworks, generative AI solutions, and cloud technologies.</p>
+            <p className='lg:text-lg sm:text-xl xs:text-md mt-2 italic'>BSCS graduated from FAST NUCES Lahore (CGPA ~ 3.54). Currently working as Senior Software Engineer at Strategic Systems International with over 3 years of experience in modern JavaScript frameworks, generative AI solutions, and cloud technologies.</p>
           </motion.div>
           <motion.div initial={{opacity:0, y: 100}} whileInView={{opacity:1, y:0}} transition={{type:"spring", stiffness:10, duration: 1.5}} className='w-full mt-5 h-auto flex flex-col gap-3'>
             <div className='flex flex-row items-center justify-start'>

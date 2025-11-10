@@ -80,7 +80,7 @@ const Achievements = () => {
             </li>
             <li className='flex items-center'>
               <span className='w-2 h-2 bg-blue-500 rounded-full mr-3'></span>
-              CGPA: 3.53/4.0 in Computer Science
+              CGPA: 3.54/4.0 in Computer Science
             </li>
             <li className='flex items-center'>
               <span className='w-2 h-2 bg-blue-500 rounded-full mr-3'></span>
