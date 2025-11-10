@@ -1,5 +1,35 @@
 [
   {
+    "id": "selva",
+    "slug": "selva",
+    "title": "Selva — AI Travel Concierge",
+    "shortDescription": "Chat with AI to plan itineraries and book trips end‑to‑end.",
+    "image": "Selva — Home Screen (1).png",
+    "images": [
+      "Selva — Home Screen (1).png",
+      "Selva — Home Screen (2).png",
+      "Selva Trip Detail.jpg",
+      "Selva Trip Detail (2).jpg",
+      "Selva Trip Detail (3).jpg"
+    ],
+    "technologies": ["React Native", "React", "Node.js", "Generative AI", "AWS"],
+    "links": {
+      "demo": "",
+      "repo": ""
+    },
+    "details": {
+      "overview": "Conversational travel assistant where users chat with AI like a human agent to plan trips. The AI suggests destinations, builds an itinerary, and completes bookings for flights, hotels and activities with user confirmation.",
+      "features": [
+        "Natural, chat‑based trip planning with context memory",
+        "Real‑time itinerary generation and refinement",
+        "Integrated booking flow for flights, hotels, activities",
+        "Personalized recommendations based on preferences and budget",
+        "Multi‑channel experience across web and mobile",
+        "Notifications and status updates for bookings"
+      ]
+    }
+  },
+  {
     "id": "news-summarizer",
     "slug": "news-text-summarization",
     "title": "News Text Summarization using Deep Learning",

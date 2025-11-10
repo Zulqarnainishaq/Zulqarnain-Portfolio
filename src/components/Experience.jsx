@@ -21,11 +21,11 @@ const formatPeriod = (start, end) => {
 
 const Experience = () => {
   return (
-    <div className='flex flex-col items-start rounded-xl my-28 relative'>
+    <div className='flex flex-col items-start rounded-xl my-28 relative bg-blue-50 dark:bg-blue-900/20 ring-1 ring-blue-200 dark:ring-blue-800 p-4 sm:p-6'>
       <motion.h2 initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }} 
       transition={{ duration: 0.8 }}
-      className='text-3xl font-bold mb-4 px-2'>Experience</motion.h2>
+      className='text-4xl font-bold mb-6 px-2 text-blue-600 dark:text-blue-400'>Experience</motion.h2>
 
       {experiences.map((exp, idx) => {
         const hasPromotions = Array.isArray(exp.positions) && exp.positions.length > 0;
@@ -36,7 +36,11 @@ const Experience = () => {
             <motion.div key={idx} className='mt-8 w-full relative'>
               <motion.div initial={{opacity:0, x: idx % 2 === 0 ? 100 : -100}} whileInView={{opacity:1, x:0}} transition={{duration: 0.8}} className='px-2'>
                 <h3 className='text-xl font-semibold flex flex-row xs:flex-col xs:py-5 justify-between sm:text-lg xs:text-md xs:text-semi-bold'>
-                  {exp.role} - {exp.company} <span>{exp.period}</span>
+                  <span className='flex items-center'>
+                    <span className='mr-2 text-blue-600 dark:text-blue-400 text-2xl leading-none' aria-hidden="true">➤</span>
+                    {exp.role} - {exp.company}
+                  </span>
+                  <span>{exp.period}</span>
                 </h3>
                 <p className='text-lg text-justify md:text-md xs-text-sm'>
                   {exp.summary}
@@ -79,11 +83,14 @@ const Experience = () => {
           <motion.div key={idx} className='mt-8 w-full relative'>
             <motion.div initial={{opacity:0, x: idx % 2 === 0 ? 100 : -100}} whileInView={{opacity:1, x:0}} transition={{duration: 0.8}} className='px-2'>
               {/* LinkedIn-style promotion display */}
-              <h3 className='text-xl font-bold sm:text-lg xs:text-md'>
-                {firstPosition.role === latestPosition.role ? 
-                  firstPosition.role : 
-                  `${firstPosition.role} - ${latestPosition.role}`
-                }
+              <h3 className='text-xl font-bold sm:text-lg xs:text-md flex items-center gap-2'>
+                <span className='text-blue-600 dark:text-blue-400 text-2xl leading-none' aria-hidden="true">➤</span>
+                <span>
+                  {firstPosition.role === latestPosition.role ? 
+                    firstPosition.role : 
+                    `${firstPosition.role} - ${latestPosition.role}`
+                  }
+                </span>
               </h3>
               <p className='text-lg font-medium text-gray-800 dark:text-gray-200'>{exp.company}</p>
               <p className='text-sm text-gray-600 dark:text-gray-300'>{formatPeriod(earliestStart, latestEnd)}</p>
