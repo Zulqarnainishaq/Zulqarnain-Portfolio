@@ -32,6 +32,21 @@ const App = () => {
     setTimeout(() => setLoading(false), 1000); // Adjust timing as needed
   }, []);
 
+  // Notify server on first production visit per session
+  useEffect(() => {
+    try {
+      const alreadyNotified = sessionStorage.getItem('visit-notified');
+      if (import.meta.env.PROD && !alreadyNotified) {
+        const path = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+        const url = `/api/notify-visit?path=${encodeURIComponent(path)}`;
+        fetch(url, { method: 'GET', keepalive: true }).catch(() => {});
+        sessionStorage.setItem('visit-notified', '1');
+      }
+    } catch (_) {
+      // ignore storage errors (e.g., privacy mode)
+    }
+  }, []);
+
   // Scroll to hash (e.g., #projects) after route changes, retrying to account for lazy-loaded content
   useEffect(() => {
     if (location.hash) {
