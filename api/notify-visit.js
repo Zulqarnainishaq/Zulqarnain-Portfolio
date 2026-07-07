@@ -145,8 +145,14 @@ export default async function handler(req, res) {
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
-    await resend.emails.send({ from, to, subject, text });
-    return json(200, { ok: true });
+    // The Resend SDK does NOT throw on API errors — it returns { data, error }.
+    // Must inspect `error` explicitly, otherwise rejected sends look successful.
+    const { data, error } = await resend.emails.send({ from, to, subject, text });
+    if (error) {
+      console.error('[notify-visit] resend rejected:', error);
+      return json(502, { ok: false, error: error.message || 'Resend rejected the email', name: error.name });
+    }
+    return json(200, { ok: true, id: data?.id });
   } catch (error) {
     console.error('[notify-visit] error:', error);
     return json(500, { ok: false, error: error?.message || 'Unknown error' });
