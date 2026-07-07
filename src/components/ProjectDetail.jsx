@@ -14,9 +14,11 @@ import selvaHome2 from '../assets/Selva — Home Screen (2).png';
 import selvaTripDetail1 from '../assets/Selva Trip Detail.jpg';
 import selvaTripDetail2 from '../assets/Selva Trip Detail (2).jpg';
 import selvaTripDetail3 from '../assets/Selva Trip Detail (3).jpg';
+import hcms from '../assets/hcms.svg';
 
 // Map image names from JSON to actual imports
 const imageMap = {
+  'hcms.svg': hcms,
   'news summarizer.jpg': newsSummarizer,
   'past papers search engine.jpg': pastPapersSearchEngine,
   'epharmacy.png': epharmacy,

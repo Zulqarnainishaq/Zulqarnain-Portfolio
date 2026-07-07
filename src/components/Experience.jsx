@@ -25,7 +25,7 @@ const Experience = () => {
       <motion.h2 initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }} 
       transition={{ duration: 0.8 }}
-      className='text-4xl font-bold mb-6 px-2 text-blue-600 dark:text-blue-400'>Experience</motion.h2>
+      className='text-4xl font-bold mb-6 px-2 text-blue-600 dark:text-blue-400 animated-underline'>Experience</motion.h2>
 
       {experiences.map((exp, idx) => {
         const hasPromotions = Array.isArray(exp.positions) && exp.positions.length > 0;
@@ -42,6 +42,9 @@ const Experience = () => {
                   </span>
                   <span>{exp.period}</span>
                 </h3>
+                {exp.location && (
+                  <p className='text-sm text-gray-600 dark:text-gray-300 mb-2 ml-8'>{exp.location}</p>
+                )}
                 <p className='text-lg text-justify md:text-md xs-text-sm'>
                   {exp.summary}
                 </p>

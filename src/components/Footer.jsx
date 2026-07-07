@@ -9,7 +9,7 @@ const Footer = () => {
       <div className='container mx-auto flex flex-col lg:flex-row xs:flex-col justify-between items-center '>
         <div className='mb-4 md:mb-4'>
           <h2 className='text-2xl font-bold'>Zulqarnain</h2>
-          <p className='text-gray-400 text-lg lg:text-left md:text-center sm:text-center xs:text-center'>Software Engineer</p>
+          <p className='text-gray-400 text-lg lg:text-left md:text-center sm:text-center xs:text-center'>Senior Software Engineer</p>
           <p className='text-gray-300 italic text-lg lg:text-left md:text-center sm:text-center xs:text-center'>Full Stack Developer</p>
         </div>
         <div className='mb-4 md:mb-4'>
@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
       </div>
       <div className='mt-8 text-center text-gray-500 text-lg'>
-        <p>&copy; 2024 - Zulqarnain Ishaq. All rights reserved.</p>
+        <p>&copy; 2026 - Zulqarnain Ishaq. All rights reserved.</p>
       </div>
     </motion.footer>
   );

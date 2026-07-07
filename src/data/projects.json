@@ -1,5 +1,30 @@
 [
   {
+    "id": "hummingbird",
+    "slug": "hummingbird",
+    "title": "Hummingbird – Self‑Storage Property Management Software",
+    "shortDescription": "Cloud‑based PMS that automates busywork, streamlines front‑desk workflows, and drives revenue for self‑storage operators.",
+    "image": "hummingbird.webp",
+    "technologies": ["Node.js", "Vue.js", "MySQL", "AWS", "Docker", "SaaS", "Microservices"],
+    "links": {
+      "demo": "https://www.tenantinc.com/products/hummingbird",
+      "repo": ""
+    },
+    "details": {
+      "overview": "Modern, cloud‑native property management software for self‑storage operators that automates repetitive tasks (reminders, notices, reporting), empowers front‑desk teams with an intuitive UI, unifies operational and marketing data to reveal what drives occupancy, and bakes compliance into core workflows. Contributed to this multi‑tenant SaaS platform with ARR exceeding $10M.",
+      "features": [
+        "Automation for reminders, notices, and reporting",
+        "Intuitive operator‑designed UI for front‑desk efficiency",
+        "Unified data across website, PMS, and reputation analytics",
+        "Built‑in compliance for leases and lien processes"
+      ],
+      "references": [
+        "https://www.tenantinc.com/products/hummingbird",
+        "https://www.tenantinc.com/blog/revolutionizing-self-storage-the-hummingbird-effect"
+      ]
+    }
+  },
+  {
     "id": "selva",
     "slug": "selva",
     "title": "Selva — AI Travel Concierge",
@@ -30,61 +55,25 @@
     }
   },
   {
-    "id": "news-summarizer",
-    "slug": "news-text-summarization",
-    "title": "News Text Summarization using Deep Learning",
-    "shortDescription": "Summarizes news articles with Keras/TensorFlow trained on the CNN/DailyMail dataset.",
-    "image": "news summarizer.jpg",
-    "technologies": ["Django", "React", "Keras", "TensorFlow", "CNN/DailyMail"],
-    "links": {
-      "demo": "https://drive.google.com/file/d/15fLsYFYgZE5QyAhFAdJn_PqtH4GyOhaq/view?usp=sharing/",
-      "repo": ""
-    },
-    "details": {
-      "overview": "A full‑stack application that allows users to paste a news article and generate an abstractive summary using a Seq2Seq model trained with Keras/TensorFlow. The backend is built in Django with an inference API, and the frontend is in React.",
-      "features": [
-        "Paste article or upload file to summarize",
-        "GPU-accelerated model inference endpoint",
-        "History of generated summaries"
-      ]
-    }
-  },
-  {
-    "id": "past-papers-search",
-    "slug": "past-papers-search",
-    "title": "Search Engine for Past Papers (FAST NUCES)",
-    "shortDescription": "Academic search over past papers using information retrieval techniques and embeddings.",
-    "image": "past papers search engine.jpg",
-    "technologies": ["Python", "Hugging Face", "IR Methods"],
+    "id": "hcms",
+    "slug": "hcms-ai",
+    "title": "HCMS.ai — AI‑Powered Human Capital Management Platform",
+    "shortDescription": "Enterprise HCMS built for the UAE government with AI‑driven recruitment, workforce intelligence, and skill gap analysis.",
+    "image": "hcms.svg",
+    "technologies": ["React.js", "Nest.js", "Node.js", "PostgreSQL", "Azure", "Azure App Service", "Azure Functions", "Azure Blob", "CI/CD", "Generative AI"],
     "links": {
       "demo": "",
       "repo": ""
     },
     "details": {
+      "overview": "Enterprise‑grade Human Capital Management platform built for the UAE government. HCMS.ai delivers AI‑driven recruitment, workforce intelligence, skill gap analysis, and end‑to‑end employee lifecycle management at national scale, running on secure, event‑driven Azure infrastructure with CI/CD pipelines.",
       "features": [
-        "Tokenization, stemming and TF‑IDF scoring",
-        "Semantic reranking with transformer embeddings",
-        "Faceted filtering by subject and year"
-      ]
-    }
-  },
-  {
-    "id": "e-pharmacy",
-    "slug": "e-pharmacy",
-    "title": "E‑Pharmacy (Online medicine store)",
-    "shortDescription": "E‑commerce app to browse, search and purchase medicines with cart and checkout.",
-    "image": "epharmacy.png",
-    "technologies": ["Node.js", "React", "Bootstrap", "MySQL"],
-    "links": {
-      "demo": "",
-      "repo": ""
-    },
-    "details": {
-      "overview": "A MERN‑style application (Node + React + MySQL) for discovering medicines, placing orders, and managing inventory.",
-      "features": [
-        "JWT authentication and user roles",
-        "Shopping cart and order management",
-        "Admin dashboard for products"
+        "AI‑driven recruitment and candidate matching",
+        "Workforce intelligence and skill gap analysis",
+        "Full employee lifecycle management",
+        "Event‑driven architecture on Azure (App Service, Functions, Blob, Queue)",
+        "Scalable React.js frontend with Nest.js/Node.js backend",
+        "Security compliance and system stability for government stakeholders"
       ]
     }
   },
@@ -137,27 +126,61 @@
     }
   },
   {
-    "id": "hummingbird",
-    "slug": "hummingbird",
-    "title": "Hummingbird – Self‑Storage Property Management Software",
-    "shortDescription": "Cloud‑based PMS that automates busywork, streamlines front‑desk workflows, and drives revenue for self‑storage operators.",
-    "image": "hummingbird.webp",
-    "technologies": ["SaaS", "Property Management", "Self Storage"],
+    "id": "news-summarizer",
+    "slug": "news-text-summarization",
+    "title": "Abstractive Text Summarization (Deep Learning)",
+    "shortDescription": "Web app integrating transformer‑based NLP models (PyTorch/BERT, Keras/TensorFlow) for English text summarization.",
+    "image": "news summarizer.jpg",
+    "technologies": ["Django REST", "React", "Python", "PyTorch", "BERT", "Keras", "TensorFlow"],
     "links": {
-      "demo": "https://www.tenantinc.com/products/hummingbird",
+      "demo": "https://drive.google.com/file/d/15fLsYFYgZE5QyAhFAdJn_PqtH4GyOhaq/view?usp=sharing/",
       "repo": ""
     },
     "details": {
-      "overview": "Modern, cloud‑native property management software for self‑storage operators that automates repetitive tasks (reminders, notices, reporting), empowers front‑desk teams with an intuitive UI, unifies operational and marketing data to reveal what drives occupancy, and bakes compliance into core workflows.",
+      "overview": "A full‑stack application that allows users to paste a news article and generate an abstractive summary using transformer‑based NLP models. The backend is built with Django REST providing an inference API, and the frontend is in React.",
       "features": [
-        "Automation for reminders, notices, and reporting",
-        "Intuitive operator‑designed UI for front‑desk efficiency",
-        "Unified data across website, PMS, and reputation analytics",
-        "Built‑in compliance for leases and lien processes"
-      ],
-      "references": [
-        "https://www.tenantinc.com/products/hummingbird",
-        "https://www.tenantinc.com/blog/revolutionizing-self-storage-the-hummingbird-effect"
+        "Paste article or upload file to summarize",
+        "GPU-accelerated model inference endpoint",
+        "History of generated summaries"
+      ]
+    }
+  },
+  {
+    "id": "e-pharmacy",
+    "slug": "e-pharmacy",
+    "title": "E‑Pharmacy (Online medicine store)",
+    "shortDescription": "E‑commerce app to browse, search and purchase medicines with cart and checkout.",
+    "image": "epharmacy.png",
+    "technologies": ["Node.js", "React", "Bootstrap", "MySQL"],
+    "links": {
+      "demo": "",
+      "repo": ""
+    },
+    "details": {
+      "overview": "A MERN‑style application (Node + React + MySQL) for discovering medicines, placing orders, and managing inventory.",
+      "features": [
+        "JWT authentication and user roles",
+        "Shopping cart and order management",
+        "Admin dashboard for products"
+      ]
+    }
+  },
+  {
+    "id": "past-papers-search",
+    "slug": "past-papers-search",
+    "title": "Search Engine for Past Papers (FAST NUCES)",
+    "shortDescription": "Academic search over past papers using information retrieval techniques and embeddings.",
+    "image": "past papers search engine.jpg",
+    "technologies": ["Python", "Hugging Face", "IR Methods"],
+    "links": {
+      "demo": "",
+      "repo": ""
+    },
+    "details": {
+      "features": [
+        "Tokenization, stemming and TF‑IDF scoring",
+        "Semantic reranking with transformer embeddings",
+        "Faceted filtering by subject and year"
       ]
     }
   }

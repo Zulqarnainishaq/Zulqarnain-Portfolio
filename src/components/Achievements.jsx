@@ -6,8 +6,8 @@ const Achievements = () => {
   const achievements = [
     {
       id: 1,
-      title: 'Six Time Dean List',
-      description: 'Achieved Dean List recognition six times during BSCS at FAST NUCES for maintaining exceptional academic performance',
+      title: "Six-Time Dean's List",
+      description: "Achieved Dean's List recognition six times during BSCS at FAST NUCES for maintaining exceptional academic performance",
       image: sixTimeDeanList,
       category: 'Academic Excellence'
     },
@@ -76,7 +76,7 @@ const Achievements = () => {
           <ul className='space-y-2 text-gray-700 dark:text-gray-300'>
             <li className='flex items-center'>
               <span className='w-2 h-2 bg-blue-500 rounded-full mr-3'></span>
-              Six-time Dean List recipient at FAST NUCES
+              Six-time Dean's List recipient at FAST NUCES
             </li>
             <li className='flex items-center'>
               <span className='w-2 h-2 bg-blue-500 rounded-full mr-3'></span>

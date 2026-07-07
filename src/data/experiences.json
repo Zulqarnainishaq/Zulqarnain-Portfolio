@@ -1,48 +1,32 @@
 [
   {
+    "company": "Sprint League",
+    "location": "Remote — Abu Dhabi, UAE (Contract)",
+    "role": "Team Lead | Senior Software Engineer",
+    "period": "Oct 2025 - Present",
+    "summary": "Leading development of enterprise AI platforms (hcms.ai) for the UAE government, enabling workforce intelligence, skill gap analysis, and AI-driven recruitment at scale. Architected scalable frontend and backend systems with React.js, Vue.js, Node.js and Nest.js, drove the AWS-to-Azure migration, and built secure, event-driven architectures using Azure Functions, Blob Storage, App Service and Queue with CI/CD pipelines.",
+    "skills": [
+      "React.js", "Vue.js", "Node.js", "Nest.js", "TypeScript", "Generative AI", "Azure", "Azure Functions", "Azure Blob Storage", "Azure App Service", "Azure Queue", "CI/CD", "Microservices", "PostgreSQL", "Team Leadership"
+    ]
+  },
+  {
     "company": "Strategic Systems International",
-    "location": "Lahore",
-    "positions": [
-      {
-        "role": "Senior Software Engineer",
-        "start": "2025-08",
-        "end": null,
-        "location": "Lahore",
-        "summary": "Working on generative AI based solution which provides mobile and web interfaces for better user experience.",
-        "skills": ["React Native", "React", "Node.js", "Vitest", "Postman API", "Postman", "Large Language Models (LLM)", "PostgreSQL", "Amazon Web Services (AWS)", "Amazon Cognito", "Azure DevOps Server", "Git", "Generative AI", "Prompt Engineering"]
-      },
-      {
-        "role": "Software Engineer",
-        "start": "2023-07",
-        "end": "2025-07",
-        "location": "Lahore",
-        "summary": "Built frontend and backend APIs for a microservices-based self-storage platform using Node.js, Vue.js and MySQL. Worked with AWS RDS/S3, Docker, Kubernetes, and Agile processes.",
-        "skills": [
-          "Node.js", "Vue.js", "MySQL", "Software Development", "JavaScript Frameworks", "AWS/RDS", "Jira", "Git/GitLab", "Postman", "AWS/S3", "Docker", "Kubernetes"
-        ]
-      }
-    ],
+    "location": "Hybrid — Lahore, Pakistan (Contract)",
+    "role": "Senior Software Engineer",
+    "period": "Jul 2023 - Oct 2025",
+    "summary": "Translated business requirements into scalable, OOP-based solutions across a React Native mobile app and React-based admin portal. Designed Node.js backend architecture using SOLID design patterns, Drizzle ORM, PostgreSQL and Redis for high-performance microservices, built infrastructure on AWS (EC2, RDS, S3, SQS, CodeDeploy, CloudFormation) with Docker, and prototyped generative AI solutions with AWS Bedrock (Claude Sonnet).",
     "skills": [
-      "React Native", "React", "Node.js", "Vitest", "Postman API", "Postman", "Large Language Models (LLM)", "PostgreSQL", "Amazon Web Services (AWS)", "Amazon Cognito", "Azure DevOps Server", "Git", "Generative AI", "Prompt Engineering",
-      "Vue.js", "MySQL", "AWS/RDS", "Docker", "Kubernetes", "S3", "Jira", "GitLab"
+      "React Native", "React.js", "Node.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Redis", "AWS", "AWS EC2", "AWS RDS", "AWS S3", "AWS SQS", "CloudFormation", "Docker", "Vitest", "Postman", "GitFlow", "Azure DevOps", "AWS Bedrock", "Generative AI"
     ]
   },
   {
-    "company": "FastDevLabs",
-    "role": "Associate Software Engineer",
-    "period": "Sep 2022 - Jun 2023",
-    "summary": "Developed features and APIs using Node.js, React.js, and MySQL. Performed unit and stress testing.",
-    "skills": [
-      "JavaScript","JavaScript Frameworks","React.js","Node.js","MySQL","Jira","Postman","Git"
-    ]
-  },
-  {
-    "company": "United Softlabs",
+    "company": "United Softlabs (Pvt.) Ltd",
+    "location": "Lahore, Pakistan",
     "role": "Software Engineer Intern",
     "period": "Jun 2022 - Aug 2022",
-    "summary": "Worked on full‑stack features using Node.js, React.js and MySQL. Trained and deployed a deep learning model for an e‑commerce use case.",
+    "summary": "Built frontend and backend APIs for multiple projects using Node.js, React.js and MySQL, and contributed to deep learning model training and deployment for an e-commerce application.",
     "skills": [
-      "HTML","CSS","JavaScript","React.js","Keras/TensorFlow","SQLite","MongoDB","Node.js","Git"
+      "Node.js", "React.js", "JavaScript", "MySQL", "Keras/TensorFlow", "Deep Learning", "Git"
     ]
   }
 ]
