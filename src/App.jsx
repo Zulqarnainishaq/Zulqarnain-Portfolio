@@ -4,6 +4,7 @@ import Loader from './components/Loader';
 import FullPageLoader from './components/FullPageLoader';
 import SmoothScroll from './components/SmoothScroll';
 import ScrollProgress from './components/ScrollProgress';
+import CustomCursor from './components/CustomCursor';
 
 const Hero = lazy(() => import('./components/Hero'));
 const Technologies = lazy(() => import('./components/Tech'));
@@ -15,6 +16,7 @@ const Experience = lazy(() => import('./components/Experience'));
 const ProjectDetail = lazy(() => import('./components/ProjectDetail'));
 const Education = lazy(() => import('./components/Education'));
 const Achievements = lazy(() => import('./components/Achievements'));
+const Certifications = lazy(() => import('./components/Certifications'));
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -81,6 +83,7 @@ const App = () => {
     {/* added full page loader and separate component loaders */}
       <SmoothScroll />
       <ScrollProgress />
+      <CustomCursor />
       {loading && <FullPageLoader />}
       <div className={`${darkMode ? 'text-neutral-300' : 'text-black'} overflow-x-hidden antialiased selection:bg-cyan-100 selection:text-cyan-900`}>
         <div className='fixed top-0 -z-10 h-full w-full overflow-hidden'>
@@ -111,6 +114,9 @@ const App = () => {
                     </section>
                     <section id='tech'>
                       <Technologies />
+                    </section>
+                    <section id="certifications">
+                      <Certifications />
                     </section>
                     <section id="experience">
                       <Experience />

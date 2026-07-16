@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360" width="300" height="360" role="img" aria-label="AWS Certified Cloud Practitioner">
+  <defs>
+    <linearGradient id="awsBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#232f3e"/>
+      <stop offset="1" stop-color="#111a26"/>
+    </linearGradient>
+    <linearGradient id="awsBand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3b6ea5"/>
+      <stop offset="1" stop-color="#5aa0d6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- badge body -->
+  <rect x="20" y="14" width="260" height="332" rx="22" fill="url(#awsBg)" stroke="#4a5a6e" stroke-width="1.5"/>
+  <rect x="20" y="14" width="260" height="332" rx="22" fill="none" stroke="#5aa0d6" stroke-width="2" opacity="0.35"/>
+
+  <text x="150" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="1" fill="#ffffff">AWS Certified</text>
+
+  <!-- AWS smile arrow -->
+  <g transform="translate(150,150)">
+    <text x="0" y="-8" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="800" fill="#ffffff">aws</text>
+    <path d="M -52 30 Q 0 62 52 30" fill="none" stroke="#ff9900" stroke-width="7" stroke-linecap="round"/>
+    <path d="M 44 24 L 54 30 L 45 37 Z" fill="#ff9900"/>
+  </g>
+
+  <!-- tier band -->
+  <path d="M 20 250 L 280 250 L 280 324 Q 280 346 258 346 L 42 346 Q 20 346 20 324 Z" fill="url(#awsBand)"/>
+  <text x="150" y="286" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800" fill="#ffffff">Cloud</text>
+  <text x="150" y="314" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800" fill="#ffffff">Practitioner</text>
+  <text x="150" y="335" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#dbeafe">FOUNDATIONAL</text>
+</svg>

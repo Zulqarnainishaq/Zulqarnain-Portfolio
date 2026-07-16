@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360" width="300" height="360" role="img" aria-label="Microsoft Certified Azure Developer Associate">
+  <defs>
+    <linearGradient id="azHex" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a7bd4"/>
+      <stop offset="1" stop-color="#004e8c"/>
+    </linearGradient>
+    <linearGradient id="azA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fd3ff"/>
+      <stop offset="1" stop-color="#0a7bd4"/>
+    </linearGradient>
+    <linearGradient id="azRibbon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f2b705"/>
+      <stop offset="1" stop-color="#ffcf40"/>
+    </linearGradient>
+  </defs>
+
+  <!-- hexagon badge -->
+  <polygon points="150,20 258,82 258,214 150,276 42,214 42,82" fill="url(#azHex)" stroke="#7fd3ff" stroke-width="2.5"/>
+  <polygon points="150,36 244,90 244,206 150,260 56,206 56,90" fill="none" stroke="#bfe6ff" stroke-width="1" opacity="0.5"/>
+
+  <text x="150" y="74" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.5" fill="#eaf6ff">Microsoft Certified</text>
+
+  <!-- Azure "A" mark (two chevrons) -->
+  <g transform="translate(150,158)">
+    <path d="M -6 -46 L 30 40 L -2 40 L -14 12 L -34 40 L -46 40 Z" fill="url(#azA)"/>
+  </g>
+
+  <!-- associate ribbon -->
+  <path d="M 96 262 L 204 262 L 190 300 L 150 288 L 110 300 Z" fill="url(#azRibbon)"/>
+  <text x="150" y="286" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" letter-spacing="1" fill="#5a3d00">ASSOCIATE</text>
+
+  <text x="150" y="332" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff">Azure Developer</text>
+</svg>

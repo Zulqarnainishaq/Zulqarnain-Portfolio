@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
  * 3D tilt-on-hover card with a cursor-following spotlight glow.
  * Pointer position drives rotateX/rotateY and a radial highlight.
  */
-const TiltCard = ({ children, className = '', max = 10 }) => {
+const TiltCard = ({ children, className = '', max = 15 }) => {
   const ref = useRef(null);
   const reduce = useReducedMotion();
 
@@ -18,7 +18,9 @@ const TiltCard = ({ children, className = '', max = 10 }) => {
   const rotateX = useSpring(rx, { stiffness: 150, damping: 18 });
   const rotateY = useSpring(ry, { stiffness: 150, damping: 18 });
 
-  const glow = useMotionTemplate`radial-gradient(320px circle at ${gx}% ${gy}%, rgba(56,189,248,0.18), transparent 65%)`;
+  const glow = useMotionTemplate`radial-gradient(340px circle at ${gx}% ${gy}%, rgba(56,189,248,0.22), transparent 65%)`;
+  // Specular sheen streak that tracks the cursor across the card
+  const sheen = useMotionTemplate`linear-gradient(105deg, transparent ${gx}%, rgba(255,255,255,0.16), transparent calc(${gx}% + 16%))`;
 
   const handleMove = (e) => {
     if (reduce || !ref.current) return;
@@ -49,10 +51,16 @@ const TiltCard = ({ children, className = '', max = 10 }) => {
     >
       {children}
       {!reduce && (
-        <motion.div
-          style={{ background: glow }}
-          className='pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100'
-        />
+        <>
+          <motion.div
+            style={{ background: glow }}
+            className='pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100'
+          />
+          <motion.div
+            style={{ background: sheen }}
+            className='pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 mix-blend-overlay'
+          />
+        </>
       )}
     </motion.div>
   );

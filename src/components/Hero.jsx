@@ -1,24 +1,58 @@
+import { Suspense, lazy, useEffect, useState } from 'react';
 import main from '../assets/main.jpg';
 import cvPdf from './Zulqarnain_CV.pdf';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import Magnetic from './Magnetic';
+import ErrorBoundary from './ErrorBoundary';
+
+// Heavy 3D (three.js) is code-split and only mounted when the device can handle it.
+const Scene3D = lazy(() => import('./Scene3D'));
 
 const Hero = () => {
   const reduce = useReducedMotion();
+  const [can3D, setCan3D] = useState(false);
+
+  useEffect(() => {
+    const fine = window.matchMedia('(pointer: fine)').matches;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const bigEnough = window.innerWidth >= 768;
+    setCan3D(fine && !reduced && bigEnough);
+  }, []);
+
+  // Scroll-driven parallax (works with Lenis smooth scroll).
+  const { scrollY } = useScroll();
+  const yImage = useTransform(scrollY, [0, 700], [0, -70]);
+  const yText = useTransform(scrollY, [0, 700], [0, 40]);
+  const yOrb = useTransform(scrollY, [0, 700], [0, 120]);
 
   return (
     <motion.div className='relative'>
       {/* Aurora backdrop */}
       {!reduce && (
-        <div className='pointer-events-none absolute inset-0 -z-[5] overflow-hidden'>
+        <div className='pointer-events-none absolute inset-0 -z-[6] overflow-hidden'>
           <div className='aurora aurora-1 w-[26rem] h-[26rem] -top-20 -left-10' />
           <div className='aurora aurora-2 w-[30rem] h-[30rem] top-10 right-0' />
           <div className='aurora aurora-3 w-[22rem] h-[22rem] bottom-0 left-1/3' />
         </div>
       )}
 
+      {/* Interactive 3D orb layer (behind content, never blocks clicks) */}
+      {can3D && (
+        <motion.div
+          style={{ y: yOrb }}
+          className='pointer-events-none absolute inset-0 -z-[4] opacity-80'
+          aria-hidden
+        >
+          <ErrorBoundary>
+            <Suspense fallback={null}>
+              <Scene3D />
+            </Suspense>
+          </ErrorBoundary>
+        </motion.div>
+      )}
+
       <div className='flex justify-between h-[45%] mt-20 sm:flex-col md:flex-col lg:flex-row xl:flex-row xs:flex-col mb-28'>
-        <div className='my-10 lg:w-[45%] h-auto flex justify-center items-center rounded-md  md:flex-col sm:flex-col xs:flex-col sm:w-[100%] xs:w-[100%]'>
+        <motion.div style={{ y: yText }} className='my-10 lg:w-[45%] h-auto flex justify-center items-center rounded-md  md:flex-col sm:flex-col xs:flex-col sm:w-[100%] xs:w-[100%]'>
           <motion.div initial={{opacity:0, x: -100}} whileInView={{opacity:1, x:0}} transition={{type:"spring", stiffness:10, duration: 1}}
             className='text-justify flex justify-center flex-col '>
             {/* Name reveal with flowing animated gradient (single element — always fully legible) */}
@@ -78,8 +112,9 @@ const Hero = () => {
               </Magnetic>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
         <motion.div
+          style={{ y: yImage }}
           initial={{opacity:0, x: 100}}
           whileInView={{opacity:1, x:0}}
           transition={{type:"spring", stiffness:10, duration: 1}}

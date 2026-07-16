@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import sixTimeDeanList from '../assets/six time deen list.jpeg';
 import ssiOnboarding from '../assets/ssi onboarding.jpeg';
+import Reveal from './Reveal';
+import TiltCard from './TiltCard';
 
 const Achievements = () => {
   const achievements = [
@@ -26,40 +28,38 @@ const Achievements = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }} 
         transition={{ duration: 0.8 }}
-        className='text-3xl font-bold mb-8 px-2'
+        className='text-3xl font-bold mb-8 px-2 animated-underline'
       >
         Achievements & Certifications
       </motion.h2>
-      
+
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-2'>
         {achievements.map((achievement, idx) => (
-          <motion.div
-            key={achievement.id}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: idx * 0.1 }}
-            whileHover={{ scale: 1.05 }}
-            className='bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer'
-          >
-            <div className='relative h-48 overflow-hidden'>
-              <img
-                src={achievement.image}
-                alt={achievement.title}
-                className='w-full h-full object-cover transition-transform duration-300 hover:scale-110'
-              />
-              <div className='absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-semibold'>
-                {achievement.category}
+          <Reveal key={achievement.id} delay={idx * 0.12} className='group'>
+            <TiltCard
+              max={12}
+              className='bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer ring-1 ring-transparent transition-shadow duration-300 group-hover:shadow-2xl group-hover:shadow-sky-500/20 h-full'
+            >
+              <div className='relative h-48 overflow-hidden'>
+                <img
+                  src={achievement.image}
+                  alt={achievement.title}
+                  className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
+                />
+                <div className='absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-semibold [transform:translateZ(50px)] shadow-lg'>
+                  {achievement.category}
+                </div>
               </div>
-            </div>
-            <div className='p-4'>
-              <h3 className='text-lg font-semibold mb-2 text-gray-900 dark:text-white'>
-                {achievement.title}
-              </h3>
-              <p className='text-sm text-gray-600 dark:text-gray-300 leading-relaxed'>
-                {achievement.description}
-              </p>
-            </div>
-          </motion.div>
+              <div className='p-4 [transform:translateZ(35px)]'>
+                <h3 className='text-lg font-semibold mb-2 text-gray-900 dark:text-white'>
+                  {achievement.title}
+                </h3>
+                <p className='text-sm text-gray-600 dark:text-gray-300 leading-relaxed'>
+                  {achievement.description}
+                </p>
+              </div>
+            </TiltCard>
+          </Reveal>
         ))}
       </div>
       
@@ -76,7 +76,7 @@ const Achievements = () => {
           <ul className='space-y-2 text-gray-700 dark:text-gray-300'>
             <li className='flex items-center'>
               <span className='w-2 h-2 bg-blue-500 rounded-full mr-3'></span>
-              Six-time Dean's List recipient at FAST NUCES
+              Six-time Dean&apos;s List recipient at FAST NUCES
             </li>
             <li className='flex items-center'>
               <span className='w-2 h-2 bg-blue-500 rounded-full mr-3'></span>

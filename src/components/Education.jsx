@@ -12,7 +12,7 @@ const Education = () => {
       <motion.h2 initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }} 
       transition={{ duration: 0.8 }}
-      className='text-3xl font-bold mb-4 px-2'>Education</motion.h2>
+      className='text-3xl font-bold mb-4 px-2 animated-underline'>Education</motion.h2>
 
       {education.map((ed, idx) => (
         <motion.div key={idx} className='mt-8 w-full'>
@@ -70,7 +70,7 @@ const Education = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         className='mt-16 w-full'
       >
-        <h3 className='text-2xl font-bold mb-8 px-2 text-blue-600 dark:text-blue-400'>Academic Documents</h3>
+        <h3 className='text-2xl font-bold mb-8 px-2 text-blue-600 dark:text-blue-400 animated-underline'>Academic Documents</h3>
         
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-2'>
           {/* BS Computer Science Degree */}
@@ -78,7 +78,7 @@ const Education = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className='bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-600'
+            className='bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-600 transition-all duration-300 hover:-translate-y-2 hover:border-sky-400/50 hover:shadow-xl hover:shadow-sky-500/20'
           >
             <img 
               src={bscsDegree} 
@@ -99,7 +99,7 @@ const Education = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className='bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-600'
+            className='bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-600 transition-all duration-300 hover:-translate-y-2 hover:border-sky-400/50 hover:shadow-xl hover:shadow-sky-500/20'
           >
             <img 
               src={transcript} 
@@ -127,7 +127,7 @@ const Education = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className='bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-600'
+            className='bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-600 transition-all duration-300 hover:-translate-y-2 hover:border-sky-400/50 hover:shadow-xl hover:shadow-sky-500/20'
           >
             <img 
               src={icsDegree} 
@@ -148,7 +148,7 @@ const Education = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className='bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-600'
+            className='bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-600 transition-all duration-300 hover:-translate-y-2 hover:border-sky-400/50 hover:shadow-xl hover:shadow-sky-500/20'
           >
             <img 
               src={metricDegree} 

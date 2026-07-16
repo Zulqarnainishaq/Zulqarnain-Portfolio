@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
+import PropTypes from 'prop-types';
 import node from '../assets/node.png';
 import react from '../assets/react.png';
 import js from '../assets/JS.png';
@@ -66,19 +67,66 @@ const iconTechs = [
   { Icon: SiAmazonsqs, label: 'AWS SQS', color: AWS, href: 'https://aws.amazon.com/sqs/' },
 ];
 
-const Tech = () => {
-  const animateProps = {
-    y: ['0rem', '0.5rem', '0rem'],
-    transition: {
-      duration: 1.5,
-      repeat: Infinity,
-      ease: 'easeInOut',
-    },
-  };
+// Unified list, tagged by render type
+const allTechs = [
+  ...imageTechs.map((t) => ({ ...t, type: 'img' })),
+  ...iconTechs.map((t) => ({ ...t, type: 'icon' })),
+];
 
-  const tileClass =
-    'flex flex-col items-center gap-3 w-[9rem] sm:w-[8rem] xs:w-[7rem] hover:brightness-90 transition';
-  const labelClass = 'text-sm font-medium text-center opacity-80';
+// Distribute evenly across 3 rows
+const rows = [[], [], []];
+allTechs.forEach((t, i) => rows[i % 3].push(t));
+
+// A single technology chip (icon/logo + label) with hover glow + lift.
+const TechChip = ({ item }) => (
+  <a
+    href={item.href}
+    target='_blank'
+    rel='noopener noreferrer'
+    className='group shrink-0 flex flex-col items-center gap-2 px-6 w-[9rem]'
+  >
+    <div className='relative h-[6rem] flex items-center justify-center transition-transform duration-300 group-hover:scale-125 group-hover:-translate-y-1'>
+      <div
+        className='pointer-events-none absolute inset-0 rounded-full opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100'
+        style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.45), transparent 70%)' }}
+      />
+      {item.type === 'img' ? (
+        <img src={item.src} alt={item.label} className='relative max-h-[5.5rem] w-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.35)]' />
+      ) : (
+        <item.Icon size={70} style={{ color: item.color }} className='relative drop-shadow-[0_10px_20px_rgba(0,0,0,0.35)]' aria-label={item.label} />
+      )}
+    </div>
+    <span className='text-sm font-medium opacity-80 whitespace-nowrap'>{item.label}</span>
+  </a>
+);
+
+TechChip.propTypes = { item: PropTypes.object };
+
+// One auto-scrolling row. Content is duplicated so the loop is seamless.
+const MarqueeRow = ({ items, duration, reverse }) => {
+  const doubled = [...items, ...items];
+  return (
+    <div className='marquee-mask overflow-hidden w-full py-3'>
+      <div
+        className='marquee-track'
+        style={{ animationDuration: `${duration}s`, animationDirection: reverse ? 'reverse' : 'normal' }}
+      >
+        {doubled.map((t, i) => (
+          <TechChip key={`${t.label}-${i}`} item={t} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+MarqueeRow.propTypes = {
+  items: PropTypes.array,
+  duration: PropTypes.number,
+  reverse: PropTypes.bool,
+};
+
+const Tech = () => {
+  const reduce = useReducedMotion();
 
   return (
     <motion.div
@@ -87,42 +135,23 @@ const Tech = () => {
       whileInView={{ opacity: 1 }}
     >
       <Reveal>
-        <p className='text-4xl font-bold text-center mb-20 mt-10 animated-underline'>Technologies with hands-on experience</p>
+        <p className='text-4xl font-bold text-center mb-16 mt-10 animated-underline'>Technologies with hands-on experience</p>
       </Reveal>
-      <div className='flex flex-wrap justify-center items-start gap-x-8 gap-y-12 mt-5 mb-10'>
-        {imageTechs.map((t) => (
-          <motion.a
-            key={t.label}
-            href={t.href}
-            target='_blank'
-            rel='noopener noreferrer'
-            className={tileClass}
-            animate={animateProps}
-            whileHover={{ scale: 1.12 }}
-          >
-            <div className='h-[7rem] flex items-center justify-center'>
-              <img src={t.src} alt={t.label} className='max-h-[7rem] w-auto' />
-            </div>
-            <span className={labelClass}>{t.label}</span>
-          </motion.a>
-        ))}
-        {iconTechs.map((t) => (
-          <motion.a
-            key={t.label}
-            href={t.href}
-            target='_blank'
-            rel='noopener noreferrer'
-            className={tileClass}
-            animate={animateProps}
-            whileHover={{ scale: 1.12 }}
-          >
-            <div className='h-[7rem] flex items-center justify-center'>
-              <t.Icon size={80} style={{ color: t.color }} aria-label={t.label} />
-            </div>
-            <span className={labelClass}>{t.label}</span>
-          </motion.a>
-        ))}
-      </div>
+
+      {reduce ? (
+        // Static fallback for reduced-motion users (all visible, no scrolling)
+        <div className='flex flex-wrap justify-center items-start gap-x-6 gap-y-10 mt-5 mb-10'>
+          {allTechs.map((t) => (
+            <TechChip key={t.label} item={t} />
+          ))}
+        </div>
+      ) : (
+        <div className='flex flex-col gap-6 mt-5 mb-10'>
+          <MarqueeRow items={rows[0]} duration={42} reverse={false} />
+          <MarqueeRow items={rows[1]} duration={34} reverse={true} />
+          <MarqueeRow items={rows[2]} duration={48} reverse={false} />
+        </div>
+      )}
     </motion.div>
   );
 };

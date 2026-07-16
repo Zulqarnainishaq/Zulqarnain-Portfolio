@@ -96,8 +96,19 @@ html.lenis, html.lenis body { height: auto; }
   display: flex;
   width: max-content;
   animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
 }
 .marquee-mask:hover .marquee-track { animation-play-state: paused; }
+
+/* Hide the native cursor only when our custom cursor is active (fine pointer) */
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
 
 /* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
